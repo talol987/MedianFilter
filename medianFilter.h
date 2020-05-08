@@ -6,7 +6,6 @@
 #define MEDIANFILTER_H
 
 #define BUF_SIZE 64U
-#define HALF_BUF_SIZE 32U
 #define MAD_SCALE 3.0F
 #define MIN_OUTLIER_LEN 0U
 #define MAX_OUTLIER_LEN 10U
