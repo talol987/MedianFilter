@@ -1,1 +1,2 @@
-A median filter in C to remove spikes from a signal.
+A median filter algorithm in C to remove spikes from a signal.
+Based on hampel filter and optimized for small embedded MCU's without FPU.
