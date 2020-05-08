@@ -1,2 +1,21 @@
 A median filter algorithm in C to remove spikes from a signal.
 Based on hampel filter and optimized for small embedded MCU's without FPU.
+
+A spike defined by the equiation:
+
+| X[n] - median(X[n]) | > 3 * 1.4826 * MAD 
+where X is the signal, n is the sample index, MAD is the median absolute deviation.
+
+MAD is defined:
+MAD = median(| X[n] - median( X[n]) |)
+
+To find the median value "quick select" algorithms is used.
+
+Macros in medianFilter.h:
+* BUF_SIZE => size of samples buffer that the algorithm invoked on.
+* MAD_SCALE => how many sigmas the spike is bigger then a regular sample.
+* FACTOR ==> the value 1.48260224 to scale the MAD value.
+* MIN_OUTLIER_LEN & MAX_OUTLIER_LEN ==> stand for the min and max width (in time manner) of our spike.
+
+To compile ==> gcc *.c -o main
+To run ==> ./main
